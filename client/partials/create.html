@@ -1,0 +1,15 @@
+<div ng-controller = "QuestionController">
+  <a href = "#!/cancel"> Cancel </a>
+<h2> Put the question and options here </h2>
+<div class = "error"><h3>{{error}}</h3></div>
+
+<form ng-submit = "submit(question)">
+  Question: <input type = "text" ng-model = "question.question">
+  Option 1: <input type = "text" ng-model = "question.option1">
+  Option 2: <input type = "text" ng-model = "question.option2">
+  Option 3: <input type = "text" ng-model = "question.option3">
+  Option 4: <input type = "text" ng-model = "question.option4">
+  <input type ="submit" value = "Create Poll">
+</form>
+
+</div>

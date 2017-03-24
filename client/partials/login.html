@@ -1,0 +1,24 @@
+<div ng-controller = "ControllerLogin">
+  <a href = "#!/create">Create a New Poll </a>
+
+  <br>
+  <a href = "/logout">Log Out </a>
+<h2>Current Polls: </h2>
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Survey Question </th>
+    <th> Date Posted </th>
+    <th> Action </th>
+  </tr>
+
+  <tr ng-repeat = "survey in survey_questions | filter:search">
+    <td> {{survey._Login.UserName}} </td>
+    <td> <a href = "#!/{{survey._id}}">{{survey.Question}}</a></td>
+    <td> {{survey.createdAt | date:'medium' }} </td>
+    <td> <a ng-if = "id==survey._Login._id" href = "" ng-click = "deleteit(survey)"> Delete </td>
+  </tr>
+<input type = "text" ng-model = "search" placeholder = "search poll by name">
+
+</table>
+</div>

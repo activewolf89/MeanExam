@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app = "App">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+  table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  input,select{
+    display:block;
+    margin:5px;
+  }
+  .error{
+    background-color:red
+  }
+  </style>
+    <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+    <script src="bower_components/angular-route/angular-route.js" charset="utf-8"></script>
+
+    <script>
+    MyModule = angular.module('App',['ngRoute'])
+    MyModule.config(function($routeProvider){
+      $routeProvider
+      .when('/',{
+
+        templateUrl: 'partials/home.html'
+      })
+      .when('/login',{
+        templateUrl: 'partials/login.html'
+      })
+      .when('/cancel',{
+        templateUrl: 'partials/login.html'
+      })
+      .when('/create',{
+        templateUrl: 'partials/create.html'
+      })
+      .when('/:response', {
+        templateUrl: 'partials/poll.html'
+      })
+
+      .otherwise({
+  redirectTo: '/'
+})
+    })//routeprovider
+    </script>
+    <script src = "factories/UserFactory.js"> </script>
+    <script src = "factories/QuestionFactory.js"> </script>
+    <script src = "controllers/ControllerPoll.js"> </script>
+    <script src = "controllers/UserController.js"> </script>
+    <script src = "controllers/QuestionController.js"> </script>
+    <script src = "controllers/ControllerLogin.js"> </script>
+
+  </head>
+  <body>
+    <div ng-view = "">
+
+    </div>
+  </body>
+</html>

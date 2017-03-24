@@ -1,0 +1,17 @@
+<div ng-controller = "ControllerPoll">
+<h1> Description: {{description}} </h1>
+<h4> Click the Vote button to choose one </h4>
+<table>
+  <tr>
+    <th> Option </th>
+    <th> Current Count of Votes </th>
+    <th> Action </th>
+  </tr>
+  <tr ng-repeat = "poll in pollsinfo">
+    <td> {{poll.Option}} </td>
+    <td> {{poll.Count}} </td>
+    <td> <button ng-click = "vote(poll)"> Vote </button>
+  </tr>
+</table>
+<a href = "#!/login">Go to Polls </a>
+</div>
